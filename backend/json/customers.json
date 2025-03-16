@@ -1,0 +1,83 @@
+[
+    {
+      "companyName": "ABC Industries",
+      "contactPerson": { "name": "John Doe", "email": "john@abc.com", "phone": "+1 234 567 890" },
+      "billingAddress": { "street": "123 Industrial Zone", "city": "Los Angeles", "state": "California", "postalCode": "90001", "country": "USA" },
+      "gstNumber": "GST123456",
+      "creditLimit": 50000,
+      "status": "Active"
+    },
+    {
+      "companyName": "XYZ Ltd",
+      "contactPerson": { "name": "Jane Smith", "email": "jane@xyz.com", "phone": "+1 987 654 321" },
+      "billingAddress": { "street": "456 Tech Park", "city": "San Francisco", "state": "California", "postalCode": "94105", "country": "USA" },
+      "gstNumber": "GST654321",
+      "creditLimit": 30000,
+      "status": "Active"
+    },
+    {
+      "companyName": "Global Conveyors",
+      "contactPerson": { "name": "Michael Lee", "email": "michael@global.com", "phone": "+44 798 456 789" },
+      "billingAddress": { "street": "78 Supply Chain Street", "city": "London", "state": "England", "postalCode": "SW1A 1AA", "country": "UK" },
+      "gstNumber": "GST111222",
+      "creditLimit": 40000,
+      "status": "Active"
+    },
+    {
+      "companyName": "Speed Belt Systems",
+      "contactPerson": { "name": "Emily Carter", "email": "emily@speedbelt.com", "phone": "+1 456 789 012" },
+      "billingAddress": { "street": "789 Conveyor Drive", "city": "Chicago", "state": "Illinois", "postalCode": "60601", "country": "USA" },
+      "gstNumber": "GST333444",
+      "creditLimit": 45000,
+      "status": "Active"
+    },
+    {
+      "companyName": "FlexiRollers Inc",
+      "contactPerson": { "name": "Robert Brown", "email": "robert@flexirollers.com", "phone": "+1 789 654 321" },
+      "billingAddress": { "street": "101 Roller Street", "city": "Houston", "state": "Texas", "postalCode": "77001", "country": "USA" },
+      "gstNumber": "GST555666",
+      "creditLimit": 35000,
+      "status": "Inactive"
+    },
+    {
+      "companyName": "Steel Conveyor Ltd",
+      "contactPerson": { "name": "Alice Green", "email": "alice@steelconveyors.com", "phone": "+1 321 456 789" },
+      "billingAddress": { "street": "205 Heavy Metal Road", "city": "Seattle", "state": "Washington", "postalCode": "98101", "country": "USA" },
+      "gstNumber": "GST777888",
+      "creditLimit": 60000,
+      "status": "Active"
+    },
+    {
+      "companyName": "QuickMove Solutions",
+      "contactPerson": { "name": "Daniel Wilson", "email": "daniel@quickmove.com", "phone": "+49 160 9876543" },
+      "billingAddress": { "street": "15 Logistics Avenue", "city": "Berlin", "state": "Berlin", "postalCode": "10115", "country": "Germany" },
+      "gstNumber": "GST999000",
+      "creditLimit": 55000,
+      "status": "Active"
+    },
+    {
+      "companyName": "MegaBelt Corp",
+      "contactPerson": { "name": "Sophia Adams", "email": "sophia@megabelt.com", "phone": "+1 654 321 987" },
+      "billingAddress": { "street": "900 Industrial Estate", "city": "Boston", "state": "Massachusetts", "postalCode": "02108", "country": "USA" },
+      "gstNumber": "GST121314",
+      "creditLimit": 50000,
+      "status": "Active"
+    },
+    {
+      "companyName": "RoboTrack Systems",
+      "contactPerson": { "name": "Liam Davis", "email": "liam@robotrack.com", "phone": "+1 852 963 741" },
+      "billingAddress": { "street": "789 Robotics Road", "city": "San Jose", "state": "California", "postalCode": "95112", "country": "USA" },
+      "gstNumber": "GST151617",
+      "creditLimit": 48000,
+      "status": "Inactive"
+    },
+    {
+      "companyName": "UltraConvey Ltd",
+      "contactPerson": { "name": "Emma Harris", "email": "emma@ultraconvey.com", "phone": "+44 751 963 258" },
+      "billingAddress": { "street": "10 Conveyor Lane", "city": "Manchester", "state": "England", "postalCode": "M1 1AA", "country": "UK" },
+      "gstNumber": "GST181920",
+      "creditLimit": 42000,
+      "status": "Active"
+    }
+  ]
+  

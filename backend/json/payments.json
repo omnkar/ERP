@@ -1,0 +1,21 @@
+[
+    {
+      "invoiceId": "65a01234bcdef67890123456",
+      "customerId": "65a54321bcdef67890123456",
+      "paymentDate": "2024-03-20",
+      "paymentMethod": "Bank Transfer",
+      "amountPaid": 2500,
+      "remainingBalance": 2500,
+      "status": "Partially Paid"
+    },
+    {
+      "invoiceId": "65a67890bcdef67890123456",
+      "customerId": "65a67890bcdef67890123456",
+      "paymentDate": "2024-03-22",
+      "paymentMethod": "Credit Card",
+      "amountPaid": 15000,
+      "remainingBalance": 0,
+      "status": "Paid"
+    }
+  ]
+  

@@ -1,0 +1,25 @@
+[
+    {
+      "orderId": "65a89012bcdef67890123456",
+      "invoiceNumber": "INV-2024-001",
+      "invoiceDate": "2024-03-16",
+      "dueDate": "2024-04-01",
+      "items": [
+        { "productId": "65a78901bcdef67890123456", "quantity": 5, "unitPrice": 1000, "totalPrice": 5000 }
+      ],
+      "totalAmount": 5000,
+      "paymentStatus": "Unpaid"
+    },
+    {
+      "orderId": "65a90123bcdef67890123456",
+      "invoiceNumber": "INV-2024-002",
+      "invoiceDate": "2024-03-18",
+      "dueDate": "2024-04-03",
+      "items": [
+        { "productId": "65a78901bcdef67890123456", "quantity": 10, "unitPrice": 1500, "totalPrice": 15000 }
+      ],
+      "totalAmount": 15000,
+      "paymentStatus": "Paid"
+    }
+  ]
+  

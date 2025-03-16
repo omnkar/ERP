@@ -1,0 +1,25 @@
+[
+    {
+      "customerId": "65a54321bcdef67890123456",
+      "orderNumber": "ORD-2024-001",
+      "items": [
+        { "productId": "65a78901bcdef67890123456", "quantity": 5, "unitPrice": 1000, "totalPrice": 5000 }
+      ],
+      "totalAmount": 5000,
+      "status": "Processing",
+      "expectedDeliveryDate": "2024-04-10",
+      "paymentStatus": "Unpaid"
+    },
+    {
+      "customerId": "65a67890bcdef67890123456",
+      "orderNumber": "ORD-2024-002",
+      "items": [
+        { "productId": "65a78901bcdef67890123456", "quantity": 10, "unitPrice": 1500, "totalPrice": 15000 }
+      ],
+      "totalAmount": 15000,
+      "status": "Completed",
+      "expectedDeliveryDate": "2024-04-05",
+      "paymentStatus": "Paid"
+    }
+  ]
+  
