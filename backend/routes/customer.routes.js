@@ -3,8 +3,8 @@ const { createCustomer, getCustomers, getCustomerById, updateCustomer, deleteCus
 
 const router = express.Router();
 
-router.post("/", createCustomer); // Create new customer
-router.get("/", getCustomers); // Get all customers
+router.post("/create", createCustomer); // Create new customer
+router.get("/get", getCustomers); // Get all customers
 router.get("/:id", getCustomerById); // Get customer by ID
 router.put("/:id", updateCustomer); // Update customer
 router.delete("/:id", deleteCustomer); // Delete customer

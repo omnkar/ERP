@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Input, Button, message, Card } from "antd";
+import axios from "axios";
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
@@ -9,20 +10,18 @@ const Login = ({ setUser }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-        credentials: "include", // Ensure cookies are sent
+      const userData = { email, password };
+      const response = await axios.post(`${import.meta.env.VITE_URI}/auth/login`, userData,{
+        withCredentials: true,
       });
 
-      const data = await response.json();
-      if (response.ok) {
-        setUser(data.user);
+      if (response.status === 200) {
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        setUser(response.data.user);
         message.success("Login successful!");
-        navigate("/sales"); // Redirect to Sales Dashboard
+        navigate("/sales");
       } else {
-        message.error(data.message || "Login failed");
+        message.error(response.data.message || "Login failed");
       }
     } catch (error) {
       console.error("Login Error:", error);

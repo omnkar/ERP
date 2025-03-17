@@ -1,24 +1,133 @@
 [
     {
       "customerId": "65a54321bcdef67890123456",
+      "quotationId": "65a12345bcdef67890123456",
       "orderNumber": "ORD-2024-001",
+      "orderDate": "2024-03-01",
       "items": [
-        { "productId": "65a78901bcdef67890123456", "quantity": 5, "unitPrice": 1000, "totalPrice": 5000 }
+        { "productId": "65a78901bcdef67890123456", "quantity": 5, "unitPrice": 1000, "totalPrice": 5000 },
+        { "productId": "65a78902bcdef67890123456", "quantity": 2, "unitPrice": 2000, "totalPrice": 4000 }
       ],
-      "totalAmount": 5000,
+      "totalAmount": 9000,
       "status": "Processing",
-      "expectedDeliveryDate": "2024-04-10",
+      "expectedDeliveryDate": "2024-03-10",
       "paymentStatus": "Unpaid"
     },
     {
       "customerId": "65a67890bcdef67890123456",
+      "quotationId": "65a67890bcdef67890123457",
       "orderNumber": "ORD-2024-002",
+      "orderDate": "2024-03-05",
       "items": [
-        { "productId": "65a78901bcdef67890123456", "quantity": 10, "unitPrice": 1500, "totalPrice": 15000 }
+        { "productId": "65a78903bcdef67890123456", "quantity": 10, "unitPrice": 1500, "totalPrice": 15000 }
       ],
       "totalAmount": 15000,
       "status": "Completed",
+      "expectedDeliveryDate": "2024-03-15",
+      "paymentStatus": "Paid"
+    },
+    {
+      "customerId": "65a90123bcdef67890123456",
+      "quotationId": "65a90123bcdef67890123457",
+      "orderNumber": "ORD-2024-003",
+      "orderDate": "2024-03-10",
+      "items": [
+        { "productId": "65a78904bcdef67890123456", "quantity": 3, "unitPrice": 5000, "totalPrice": 15000 }
+      ],
+      "totalAmount": 15000,
+      "status": "Pending",
+      "expectedDeliveryDate": "2024-03-20",
+      "paymentStatus": "Unpaid"
+    },
+    {
+      "customerId": "65a34567bcdef67890123456",
+      "quotationId": "65a34567bcdef67890123457",
+      "orderNumber": "ORD-2024-004",
+      "orderDate": "2024-03-12",
+      "items": [
+        { "productId": "65a78905bcdef67890123456", "quantity": 8, "unitPrice": 1200, "totalPrice": 9600 }
+      ],
+      "totalAmount": 9600,
+      "status": "Processing",
+      "expectedDeliveryDate": "2024-03-22",
+      "paymentStatus": "Partially Paid"
+    },
+    {
+      "customerId": "65a23456bcdef67890123456",
+      "quotationId": "65a23456bcdef67890123457",
+      "orderNumber": "ORD-2024-005",
+      "orderDate": "2024-03-15",
+      "items": [
+        { "productId": "65a78906bcdef67890123456", "quantity": 4, "unitPrice": 3000, "totalPrice": 12000 }
+      ],
+      "totalAmount": 12000,
+      "status": "Cancelled",
+      "expectedDeliveryDate": "2024-03-25",
+      "paymentStatus": "Unpaid"
+    },
+    {
+      "customerId": "65a76543bcdef67890123456",
+      "quotationId": "65a76543bcdef67890123457",
+      "orderNumber": "ORD-2024-006",
+      "orderDate": "2024-03-18",
+      "items": [
+        { "productId": "65a78907bcdef67890123456", "quantity": 7, "unitPrice": 1800, "totalPrice": 12600 }
+      ],
+      "totalAmount": 12600,
+      "status": "Processing",
+      "expectedDeliveryDate": "2024-03-28",
+      "paymentStatus": "Unpaid"
+    },
+    {
+      "customerId": "65a67891bcdef67890123456",
+      "quotationId": "65a67891bcdef67890123457",
+      "orderNumber": "ORD-2024-007",
+      "orderDate": "2024-03-20",
+      "items": [
+        { "productId": "65a78908bcdef67890123456", "quantity": 6, "unitPrice": 2500, "totalPrice": 15000 }
+      ],
+      "totalAmount": 15000,
+      "status": "Completed",
+      "expectedDeliveryDate": "2024-03-30",
+      "paymentStatus": "Paid"
+    },
+    {
+      "customerId": "65a54322bcdef67890123456",
+      "quotationId": "65a54322bcdef67890123457",
+      "orderNumber": "ORD-2024-008",
+      "orderDate": "2024-03-22",
+      "items": [
+        { "productId": "65a78909bcdef67890123456", "quantity": 9, "unitPrice": 1600, "totalPrice": 14400 }
+      ],
+      "totalAmount": 14400,
+      "status": "Pending",
+      "expectedDeliveryDate": "2024-04-01",
+      "paymentStatus": "Unpaid"
+    },
+    {
+      "customerId": "65a98765bcdef67890123456",
+      "quotationId": "65a98765bcdef67890123457",
+      "orderNumber": "ORD-2024-009",
+      "orderDate": "2024-03-25",
+      "items": [
+        { "productId": "65a78910bcdef67890123456", "quantity": 10, "unitPrice": 2000, "totalPrice": 20000 }
+      ],
+      "totalAmount": 20000,
+      "status": "Processing",
       "expectedDeliveryDate": "2024-04-05",
+      "paymentStatus": "Partially Paid"
+    },
+    {
+      "customerId": "65a87654bcdef67890123456",
+      "quotationId": "65a87654bcdef67890123457",
+      "orderNumber": "ORD-2024-010",
+      "orderDate": "2024-03-27",
+      "items": [
+        { "productId": "65a78911bcdef67890123456", "quantity": 2, "unitPrice": 7500, "totalPrice": 15000 }
+      ],
+      "totalAmount": 15000,
+      "status": "Completed",
+      "expectedDeliveryDate": "2024-04-07",
       "paymentStatus": "Paid"
     }
   ]

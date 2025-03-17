@@ -1,4 +1,4 @@
-const Invoice = require("../models/Invoice");
+const Invoice = require("../models/invoice.model");
 
 module.exports.createInvoice = async (req, res) => {
   try {
@@ -12,6 +12,9 @@ module.exports.createInvoice = async (req, res) => {
 
 module.exports.getInvoices = async (req, res) => {
   try {
+    if (!req.user || !["Super Admin", "Sales Manager", "Sales Representative"].includes(req.user.role)) {
+      return res.status(403).json({ error: "Forbidden" });
+    }
     const invoices = await Invoice.find().populate("orderId");
     res.json(invoices);
   } catch (error) {

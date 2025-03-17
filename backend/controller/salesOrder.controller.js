@@ -1,4 +1,4 @@
-const SalesOrder = require("../models/SalesOrder");
+const SalesOrder = require("../models/salesOrders.model");
 
 module.exports.createSalesOrder = async (req, res) => {
   try {
@@ -12,7 +12,11 @@ module.exports.createSalesOrder = async (req, res) => {
 
 module.exports.getSalesOrders = async (req, res) => {
   try {
+    if (!req.user || !["Super Admin", "Sales Manager", "Sales Representative"].includes(req.user.role)) {
+      return res.status(403).json({ error: "Forbidden" });
+    }
     const orders = await SalesOrder.find().populate("customerId");
+    console.log(orders);
     res.json(orders);
   } catch (error) {
     res.status(500).json({ error: error.message });

@@ -1,6 +1,6 @@
 const User = require("../models/User");
 
-exports.getAllUsers = async (req, res) => {
+module.exports.getAllUsers = async (req, res) => {
   try {
     const users = await User.find();
     res.json(users);
@@ -9,7 +9,7 @@ exports.getAllUsers = async (req, res) => {
   }
 };
 
-exports.updateUserRole = async (req, res) => {
+module.exports.updateUserRole = async (req, res) => {
   try {
     const updatedUser = await User.findByIdAndUpdate(req.params.id, { role: req.body.role }, { new: true });
     res.json(updatedUser);
@@ -18,7 +18,7 @@ exports.updateUserRole = async (req, res) => {
   }
 };
 
-exports.deleteUser = async (req, res) => {
+module.exports.deleteUser = async (req, res) => {
   try {
     await User.findByIdAndDelete(req.params.id);
     res.json({ message: "User deleted successfully" });

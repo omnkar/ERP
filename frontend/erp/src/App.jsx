@@ -8,19 +8,20 @@ import Signup from './components/Signup'
 import Admin from './Admin/Admin'
 import SalesDashboard from './components/SalesDashboard'
 import { Navigate } from 'react-router-dom'
+
 function App() {
   const [user, setUser] = useState(null);
+
   return (
     <Routes>
       <Route path="/signup" element={<Signup />} />
       <Route path="/admin/dashboard" element={<Admin/>}/>
-      <Route path="/sales" element={SalesDashboard}/>
+      <Route path="/sales" element={<SalesDashboard user={user} />} />
       <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route 
-          path="/sales" 
-          element={user ? <SalesDashboard user={user} setUser={setUser} /> : <Navigate to="/login" />} 
-        />
-       
+      <Route 
+        path="/sales" 
+        element={ <SalesDashboard />} 
+      />
     </Routes>
   )
 }

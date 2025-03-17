@@ -3,8 +3,8 @@ const { createQuotation, getQuotations, getQuotationById, updateQuotation, delet
 
 const router = express.Router();
 
-router.post("/", createQuotation);
-router.get("/", getQuotations);
+router.post("/create", createQuotation);
+router.get("/get", getQuotations);
 router.get("/:id", getQuotationById);
 router.put("/:id", updateQuotation);
 router.delete("/:id", deleteQuotation);

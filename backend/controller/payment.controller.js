@@ -1,4 +1,5 @@
-const Payment = require("../models/Payment");
+const Payment = require("../models/payment.model");
+const Customer = require("../models/customer.model");
 
 module.exports.createPayment = async (req, res) => {
   try {
@@ -12,7 +13,11 @@ module.exports.createPayment = async (req, res) => {
 
 module.exports.getPayments = async (req, res) => {
   try {
+    if (!req.user || !["Super Admin", "Sales Manager", "Sales Representative"].includes(req.user.role)) {
+      return res.status(403).json({ error: "Forbidden" });
+    }
     const payments = await Payment.find().populate("invoiceId customerId");
+    console.log(payments);
     res.json(payments);
   } catch (error) {
     res.status(500).json({ error: error.message });
