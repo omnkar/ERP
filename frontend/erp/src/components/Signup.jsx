@@ -25,7 +25,7 @@ const SignUp = () => {
   const handleSignUp = async () => {
     try {
       console.log(import.meta.env.VITE_URI);
-      const response = await axios.post(`${import.meta.env.VITE_URI}/register`, userData);
+      const response = await axios.post(`${import.meta.env.VITE_URI}/auth/register`, userData);
       message.success(response.data.message);
       navigate("/login"); // Redirect to login page after successful registration
     } catch (error) {

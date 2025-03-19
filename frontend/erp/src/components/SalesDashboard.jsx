@@ -3,6 +3,7 @@ import { Table, Tabs, Card, Button, message } from "antd";
 import { fetchData, deleteData } from "../services/api";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie"; // Import js-cookie
 
 const SalesDashboard = () => {
   const [user, setUser] = useState(null);
@@ -23,7 +24,7 @@ const SalesDashboard = () => {
   }, []);
 
   const loadData = async () => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token"); // Extract token from cookies
     console.log(token);
     try {
       const salesData = await axios
@@ -34,7 +35,7 @@ const SalesDashboard = () => {
         })
         .then((response) => {
           if (response.status === 200) {
-            console.log(response.data);
+            
             setSalesOrders(response.data);
           }
         })
@@ -50,7 +51,7 @@ const SalesDashboard = () => {
         }
       ).then((response) => {
         if (response.status === 200) {
-          console.log(response.data);
+          
           setInvoices(response.data);
         }
       })
@@ -66,7 +67,6 @@ const SalesDashboard = () => {
         }
       ).then((response) => {
         if (response.status === 200) {
-            console.log(response.data);
             setPayments(response.data);
         }}).catch((error) => {
           console.log(error);
@@ -82,8 +82,8 @@ const SalesDashboard = () => {
   };
 
   const handleLogout = async () => {
-    await fetch(`${import.meta.env.VITE_URI}/logout`, {
-      method: "POST",
+    await axios.get(`${import.meta.env.VITE_URI}/auth/logout`, {
+      method: "get",
       credentials: "include",
     });
     localStorage.removeItem("user");

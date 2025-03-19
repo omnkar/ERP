@@ -12,6 +12,19 @@ module.exports.registerUser = async (req, res) => {
       passwordHash: hashedPassword,
       role,
     });
+
+    const token = jwt.sign(
+      { id: newUser._id, role: newUser.role },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "Lax",
+      maxAge: 60 * 60 * 1000, // 1 hour
+    });
     await newUser.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (error) {
@@ -36,16 +49,13 @@ module.exports.loginUser = async (req, res) => {
     );
     console.log(token);
     res.cookie("token", token, {
-        withCredentials: true,
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production" ? true : false, 
+      secure: process.env.NODE_ENV === "production",
       sameSite: "Lax",
       maxAge: 60 * 60 * 1000, // 1 hour
     });
-    console.log("Set-Cookie Header:", res.getHeaders()["set-cookie"]);
-    res.json({ message: "Login successful", user,token });
-
-    // Add this line to store the token in localStorage
+    
+    res.json({ message: "Login successful", user, token });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

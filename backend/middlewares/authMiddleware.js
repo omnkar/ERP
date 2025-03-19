@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 // ✅ Middleware to check if the user is authenticated
 module.exports.authMiddleware = (req, res, next) => {
-    console.log(req.cookies.token);
+    console.log("cookies = ",req.cookies.token);
   let token = req.headers.authorization && req.headers.authorization.split(" ")[1];
   if (token && token.startsWith('"') && token.endsWith('"')) {
     token = token.slice(1, -1);

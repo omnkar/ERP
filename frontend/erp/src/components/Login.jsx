@@ -11,12 +11,14 @@ const Login = ({ setUser }) => {
   const handleLogin = async () => {
     try {
       const userData = { email, password };
-      const response = await axios.post(`${import.meta.env.VITE_URI}/auth/login`, userData,{
+      const response = await axios.post(`${import.meta.env.VITE_URI}/auth/login`, userData, {
         withCredentials: true,
       });
-
+      console.log("Cookies After Login:", document.cookie); // ✅ Log cookies in frontend
+      console.log("Login Response:", response.data);
       if (response.status === 200) {
         localStorage.setItem("user", JSON.stringify(response.data.user));
+        localStorage.setItem("token", response.data.token);
         setUser(response.data.user);
         message.success("Login successful!");
         navigate("/sales");
