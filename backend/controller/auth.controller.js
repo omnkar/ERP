@@ -3,9 +3,16 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 module.exports.registerUser = async (req, res) => {
+  console.log(req.body);
   try {
-    const { name, email, password, role } = req.body;
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const { name, email, passwordHash, role } = req.body;
+
+    // Validate input
+    if (!name || !email || !passwordHash || !role) {
+      return res.status(400).json({ message: "All fields are required" });
+    }
+
+    const hashedPassword = await bcrypt.hash(passwordHash, 10);
     const newUser = new User({
       name,
       email,

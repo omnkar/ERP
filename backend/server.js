@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
     res.send("Hello World");
 });
 // Routes
-// app.use("/auth", AuthRoutes);
+app.use("/auth", AuthRoutes);
 // app.use("/customers", customerRoutes);
 app.use("/order", orderRoutes);
 app.use("/quotation",quotationRoutes)
