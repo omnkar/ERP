@@ -1,0 +1,362 @@
+:root {
+    --cd-primary-color: #2c3e50;
+    --cd-primary-light: #34495e;
+    --cd-primary-dark: #1a252f;
+    --cd-sidebar-width: 250px;
+    --cd-sidebar-bg: var(--cd-primary-dark);
+    --cd-sidebar-text: #ecf0f1;
+    --cd-sidebar-active: var(--cd-primary-light);
+    --cd-header-height: 80px;
+    --cd-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --cd-blue: #3498db;
+    --cd-green: #2ecc71;
+    --cd-orange: #e67e22;
+    --cd-purple: #9b59b6;
+  }
+  
+  .customer-dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f7fa;
+    color: #333;
+  }
+  
+  /* Sidebar Styles */
+  .cd-sidebar {
+    width: var(--cd-sidebar-width);
+    background-color: var(--cd-sidebar-bg);
+    color: var(--cd-sidebar-text);
+    height: 100vh;
+    position: fixed;
+    transition: all 0.3s;
+    z-index: 100;
+  }
+  
+  .cd-sidebar-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    height: var(--cd-header-height);
+  }
+  
+  .cd-sidebar-header h3 {
+    color: white;
+    font-size: 1.3rem;
+    margin-left: 10px;
+  }
+  
+  .cd-company-logo {
+    font-size: 1.8rem;
+    color: #e74c3c;
+  }
+  
+  .cd-sidebar-menu {
+    padding: 20px 0;
+    height: calc(100vh - var(--cd-header-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .cd-sidebar-menu ul {
+    list-style: none;
+  }
+  
+  .cd-sidebar-menu li {
+    margin-bottom: 5px;
+  }
+  
+  .cd-sidebar-menu a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--cd-sidebar-text);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+  }
+  
+  .cd-sidebar-menu a:hover {
+    background-color: var(--cd-sidebar-active);
+  }
+  
+  .cd-sidebar-menu a.active {
+    background-color: var(--cd-sidebar-active);
+    border-left: 4px solid #e74c3c;
+  }
+  
+  .cd-sidebar-menu .cd-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .cd-sidebar-divider {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 15px 20px;
+  }
+  
+  /* Main Content Styles */
+  .cd-main-content {
+    flex: 1;
+    margin-left: var(--cd-sidebar-width);
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  /* Header Styles */
+  .cd-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background-color: white;
+    box-shadow: var(--cd-card-shadow);
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .cd-header-left h1 {
+    font-size: 1.8rem;
+    color: var(--cd-primary-dark);
+    margin-bottom: 5px;
+  }
+  
+  .cd-header-left p {
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  .cd-header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cd-user-profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cd-user-profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+  }
+  
+  .cd-user-info h4 {
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+  
+  .cd-user-info p {
+    font-size: 0.8rem;
+    color: #95a5a6;
+  }
+  
+  /* Dashboard Cards */
+  .cd-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .cd-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--cd-card-shadow);
+    transition: transform 0.3s;
+  }
+  
+  .cd-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cd-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .cd-card-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+  }
+  
+  .cd-card-icon.cd-blue {
+    background-color: var(--cd-blue);
+  }
+  
+  .cd-card-icon.cd-green {
+    background-color: var(--cd-green);
+  }
+  
+  .cd-card-icon.cd-orange {
+    background-color: var(--cd-orange);
+  }
+  
+  .cd-card-icon.cd-purple {
+    background-color: var(--cd-purple);
+  }
+  
+  .cd-card-title {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    font-weight: 500;
+  }
+  
+  .cd-card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .cd-card-footer {
+    font-size: 0.8rem;
+    color: #95a5a6;
+  }
+  
+  /* Recent Orders Section */
+  .cd-recent-orders {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--cd-card-shadow);
+  }
+  
+  .cd-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .cd-section-header h2 {
+    font-size: 1.3rem;
+    color: var(--cd-primary-dark);
+  }
+  
+  .cd-section-header a {
+    color: var(--cd-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .cd-orders-table {
+    overflow-x: auto;
+  }
+  
+  .cd-orders-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .cd-orders-table th, 
+  .cd-orders-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ecf0f1;
+  }
+  
+  .cd-orders-table th {
+    background-color: #f8f9fa;
+    color: #7f8c8d;
+    font-weight: 600;
+  }
+  
+  .cd-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .cd-status.cd-in-production {
+    background-color: #fff4e5;
+    color: #e67e22;
+  }
+  
+  .cd-status.cd-shipped {
+    background-color: #e5f7ee;
+    color: #27ae60;
+  }
+  
+  .cd-status.cd-delivered {
+    background-color: #e5f3ff;
+    color: #2980b9;
+  }
+  
+  .cd-btn-view {
+    background-color: var(--cd-blue);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+  }
+  
+  .cd-btn-view:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .cd-sidebar {
+      width: 70px;
+      overflow: hidden;
+    }
+    
+    .cd-sidebar-header h3, 
+    .cd-sidebar-menu span {
+      display: none;
+    }
+    
+    .cd-sidebar-menu a {
+      justify-content: center;
+      padding: 12px 0;
+    }
+    
+    .cd-sidebar-menu .cd-icon {
+      margin-right: 0;
+      font-size: 1.3rem;
+    }
+    
+    .cd-main-content {
+      margin-left: 70px;
+    }
+    
+    .cd-cards {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .cd-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .cd-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .cd-header-right {
+      margin-top: 15px;
+    }
+  }
