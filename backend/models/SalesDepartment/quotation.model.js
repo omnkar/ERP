@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 
-const OrderSchema = new mongoose.Schema({
-  orderNumber: { type: String, required: true, unique: true },
+const QuotationSchema = new mongoose.Schema({
+  quotationNumber: { type: String, required: true, unique: true },
   date: { type: Date, required: true, default: Date.now },
+  expiryDate: { type: Date, required: true },
   customerName: { type: String, required: true },
-  customerEmail: { type: String, required: true },
   salesperson: { type: String, required: true },
   paymentTerms: { 
     type: String, 
@@ -17,9 +17,7 @@ const OrderSchema = new mongoose.Schema({
       quantity: { type: Number, required: true, min: 1 }
     }
   ],
-  additionalNotes: { type: String },
-  customerId: { type: mongoose.Schema.Types.ObjectId, ref: "Customer", required: true },
-  orderStatus: { type: String, enum: ["Pending", "Completed", "Cancelled"], default: "Pending" }
+  additionalNotes: { type: String }
 });
 
-module.exports = mongoose.model("Order", OrderSchema);
+module.exports = mongoose.model("Quotation", QuotationSchema);

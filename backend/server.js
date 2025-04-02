@@ -5,7 +5,9 @@ const morgan = require("morgan");
 const connectDB = require("./config/db");
 const cookieParser = require("cookie-parser");
 const AuthRoutes = require("./routes/authRoutes");
-const salesRoutes = require("./routes/SalesDepartment/orders.routes");
+const orderRoutes = require("./routes/SalesDepartment/orders.routes");
+const quotationRoutes = require("./routes/SalesDepartment/quotation.routes");
+const invoiceRoutes = require("./routes/SalesDepartment/invoice.routes");
 // const customerRoutes = require("./routes/customer.routes");
 // const paymentRoutes = require("./routes/payment.routes");
 // const invoiceRoutes = require("./routes/invoice.routes");
@@ -27,7 +29,9 @@ app.get("/", (req, res) => {
 // Routes
 // app.use("/auth", AuthRoutes);
 // app.use("/customers", customerRoutes);
-app.use("/sales", salesRoutes);
+app.use("/order", orderRoutes);
+app.use("/quotation",quotationRoutes)
+app.use("/invoice", invoiceRoutes);
 // app.use("/payments", paymentRoutes);
 // app.use("/invoices", invoiceRoutes);
 
